@@ -49,6 +49,20 @@ class BoardView(tk.Frame):
         quitButton = tk.Button(text="QUIT", command=lambda:self.quit())
         quitButton.grid(row=self.boardSize+4, columnspan=self.boardSize)
 
+    def win(board):
+        red, blue = 0, 0  # keep track of score
+        for m in range(8):
+            for n in range(8):
+                if board[m][n] != 0:
+                    if board[m][n].color == 'red':
+                        red += 1  # we see a red piece
+                    else:
+                        blue += 1  # we see a blue piece
+
+        return red, blue
+
+
+
     def restart(self):
         self.createBoard()
 
@@ -56,5 +70,9 @@ class BoardView(tk.Frame):
         #todo
         pass
 
+
+end = end_game(board)
+if end[1] == 0:	show_winner("red")
+elif end[0] == 0: show_winner("blue")
 board=BoardView(8)
 board.mainloop()

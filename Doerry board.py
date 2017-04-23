@@ -47,7 +47,7 @@ class BoardView(tk, Frame):
         		else:
         			displayStatus(mystatus, "Red like a comie pinko perver!")
                     button.config(image=self.redpiece, text='red')
-        	elif button.cget('text')=='red';
+        	elif button.cget('text')=='red'
                 if self.moving:
                     displayStatus(mystatus, "Eww gross...red pieces melding")
                     changeButton(self.moving,self.redgone,self,blanktile, 'empty')
@@ -57,7 +57,7 @@ class BoardView(tk, Frame):
                     button.config(image=self.redgo, text='empty')
                     displayStatus(mystatus, "CLick a space to move to")
                     self.moving=button
-            elif button.cget('text')=='moving':
+            elif button.cget('text')=='moving'
                 button.config(image=self.redpiece,text='red')
                 displayStatus(mystatus, "Aww, you changed your mind")
 
