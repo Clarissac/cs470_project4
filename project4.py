@@ -51,15 +51,17 @@ class BoardView(tk.Frame):
 
     def win(board):
         red, blue = 0, 0  # keep track of score
-        for m in range(8):
-            for n in range(8):
-                if board[m][n] != 0:
-                    if board[m][n].color == 'red':
+        for x in range(8):
+            for y in range(8):
+                if board[x][y] != 0:
+                    if board[x][y].color == 'red':
                         red += 1  # we see a red piece
                     else:
                         blue += 1  # we see a blue piece
 
         return red, blue
+
+
 
 
 
@@ -70,9 +72,8 @@ class BoardView(tk.Frame):
         #todo
         pass
 
-
-end = end_game(board)
-if end[1] == 0:	show_winner("red")
-elif end[0] == 0: show_winner("blue")
+end = win(board)
+if end[1] == 0:	who_won("red")
+elif end[0] == 0: who_won("blue")
 board=BoardView(8)
 board.mainloop()
